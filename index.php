@@ -19,7 +19,7 @@ function sum(){
 		foreach ($args as  $value) {
 			$sum+=$value;
 		}
-	return $sum;
+	return $sum2;
 }
 echo sum(null,22,44,'-0',0x655,33,22);
 
