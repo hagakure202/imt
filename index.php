@@ -5,7 +5,7 @@ if(!isset($_SESSION['cart'])){
 	$_SESSION['cart']=['sum'=>0,'items'=>[]];	
 }
 require 'products.php';
-
+$products = getProducts();
 $errors = [];
 if(!empty($_POST)){
 	
@@ -23,14 +23,13 @@ if(!empty($_POST)){
 	if(empty($errors)){
 		$id = $product;
 		$product = $products[$id];
-		$_SESSION['cart']['sum'] += $product['cost']*$count;
 		if(isset($_SESSION['cart']['items'][$id])){
 			$count +=  $_SESSION['cart']['items'][$id]['count'];
 		}
 		$_SESSION['cart']['items'][$id] = ['name'=>$product['name'],'count'=>$count];
 	}
 }
-
+cartRecalc();
 ?>
 <html>
 <head>
