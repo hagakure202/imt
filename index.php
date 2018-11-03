@@ -70,6 +70,5 @@ foreach($_SESSION['cart']['items'] as $key=>$item){
 <input  type='submit' value="submit" />
 </form>
 
-</pre>
 </body>
 </html>
