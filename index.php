@@ -13,7 +13,6 @@
 
 
 function sum(){
-
 	$args = func_get_args();
 	$sum =0;
 		foreach ($args as  $value) {
